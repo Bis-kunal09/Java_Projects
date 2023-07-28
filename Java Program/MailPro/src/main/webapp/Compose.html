@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Compose Mail</title>
+<link rel="stylesheet" href="/newfile.scss">
+<style>
+:root {
+  --main-blue: #71b7e6;
+  --main-purple: #9b59b6;
+  --main-grey: #ccc;
+  --sub-grey: #d9d9d9;
+}
+body{
+width:100%;
+height:100vh;
+  background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+  }
+</style>
+</head>
+<body>
+<div class="contact-form-wrapper">
+   <div class="title">
+     <h1>Send Mail</h1>
+  </div>
+  
+<form id="contact-form" class="contact-form" method="post" role="form" action="Compose" name="ComposeEMail">
+   <div class="form-group">
+            <input type="text" placeholder="Your Name" class="form-control" name="name" id="name" required>
+   </div>
+    <div class="form-group">
+        <input type="Receiver" placeholder="Receiver Name" class="form-control" name="receiver_name" id="receiver" required >
+    </div>
+
+    <div class="form-group">
+        <input type="text" placeholder="Subject" class="form-control" name="subject" id="subject" required>
+    </div>
+
+    <div class="form-group">
+        <textarea rows="6" placeholder="Message" class="form-control" name="message"id="message" required></textarea>    
+    </div>
+
+    <div id="submit" class="">
+        <input type="submit" id="contact-submit" class="btn btn-default submit-button" value="Send Message" OnClick="f1()">
+    </div>
+</form>
+  
+</div>
+</body>
+<script>
+(function($) {
+    $(".contact-form").validate({
+        rules: {
+            name: {
+                required: true,
+                minlength: 2
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            subject: {
+                required: true,
+                minlength: 2
+            },
+            message: {
+                required: true,
+                minlength: 2
+            }
+        },
+        messages: {
+            name: {
+                required: "come on, you have a name don't you?",
+                minlength: "your name must consist of at least 2 characters"
+            },
+            email: {
+                required: "no email, no support"
+            },
+            subject: {
+                required: "you have a reason to contact, write it here",
+                minlength: "thats all? really?"
+            },
+            message: {
+                required: "um...yea, you have to write something to send this form.",
+                minlength: "thats all? really?"
+            }
+        },
+    });    
+})(jQuery);
+
+
+
+</script>
+<script>
+function f1()
+{
+document.ComposeEMail.submit();
+}
+</script>
+</html>

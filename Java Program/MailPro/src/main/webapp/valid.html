@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mail Pro</title>
+
+<style>
+:root {
+  --main-blue: #71b7e6;
+  --main-purple: #9b59b6;
+  --main-grey: #ccc;
+  --sub-grey: #d9d9d9;
+}
+body{
+width:100%;
+height:100vh;
+  background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+ }
+a{
+color: #000000;
+    text-decoration:none;
+    font-size:25px;
+}
+
+a:hover {
+    background: #FFDD00;
+}
+h2{
+color:#FFFF00;}
+
+</style>
+ <script>
+        // Function to get the value of a query parameter from the URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Function to display the data in the HTML
+        function displayData() {
+            const data = getQueryParam('data');
+            document.getElementById('dataPlaceholder').innerText = data;
+        }
+
+        // Call the displayData function when the page is loaded
+        window.onload = displayData;
+    </script>
+</head>
+<BODY leftmargin="200px" topmargin="350px" bgColor="skyblue" link="lime" img="https://images.unsplash.com/photo-1526554850534-7c78330d5f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFpbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60">
+	<h2>Hii <span id="dataPlaceholder"></span></h2>
+	<ul>
+  <li><a href="/Inbox">Inbox</a></li>
+  <li> <a href="/Compose.html">Compose Mail</a></li>
+  <li><a href="/ChangePassword.html">Change Your Password</a></li>
+</ul>  
+<h2><a href="/">Logout</a></h2>
+</body>
+</html>
